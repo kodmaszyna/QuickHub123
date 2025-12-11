@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>QuickHub</h1>
+    <div class="header-right">
+      <button id="copy-bookmarklet">Copy Bookmarklet</button>
+      <a id="open-bookmarklet-link" href="#" target="_blank" rel="noopener" style="display:none">Open</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="console-view" class="panel active">
+      <div class="panel-left">
+        <label for="code-input">JavaScript Console</label>
+        <textarea id="code-input" placeholder="// Type JS here\nconsole.log('hello world')"></textarea>
+        <div class="controls">
+          <button id="run-code">Run</button>
+          <button id="clear-output">Clear Output</button>
+        </div>
+      </div>
+      <div class="panel-right">
+        <label>Output</label>
+        <div id="output" class="output"></div>
+      </div>
+
+      <!-- sandbox iframe for execution -->
+      <iframe id="sandbox-frame" sandbox="allow-scripts" style="display:none"></iframe>
+    </section>
+
+    <section id="games-view" class="panel">
+      <aside class="games-list">
+        <h2>Games</h2>
+        <ul id="games-menu">
+          <li data-game="bouncing">Bouncing Ball</li>
+          <li data-game="clickcircle">Click the Circle</li>
+        </ul>
+      </aside>
+      <div id="game-container" class="game-container">
+        <div class="game-placeholder">Select a game from the left</div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-bar">
+    <button id="btn-console" class="active">Console</button>
+    <button id="btn-games">Games</button>
+  </nav>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
